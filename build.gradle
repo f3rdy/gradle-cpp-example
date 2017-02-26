@@ -1,0 +1,15 @@
+apply plugin: "cpp"
+
+model {
+    components {
+        hello_lib(NativeLibrarySpec) {
+            binaries.all {
+            }
+        }
+        hello(NativeExecutableSpec) {
+            binaries.all {
+                lib library: "hello_lib"
+            }
+        }
+    }
+}
